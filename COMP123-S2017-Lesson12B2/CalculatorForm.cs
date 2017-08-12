@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Name: Taeho Kim
  * Date: August 10, 2017
  * Description: Calculator Demo Project
- * Version: 1.2 - Added the _backSpace method
+ * Version: 1.3 - Implemented multiply and devide
  */
 
 namespace COMP123_S2017_Lesson12B2
@@ -224,6 +224,12 @@ namespace COMP123_S2017_Lesson12B2
                         break;
                     case "-":
                         this.Result = this.OperandList[0] - this.OperandList[1];
+                        break;
+                    case "x":
+                        this.Result = this.OperandList[0] * this.OperandList[1];
+                        break;
+                    case "÷":
+                        this.Result = this.OperandList[0] / this.OperandList[1];
                         break;
                 }
                 this.OperandList.Clear();
