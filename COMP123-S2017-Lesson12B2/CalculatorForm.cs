@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Name: Taeho Kim
  * Date: August 10, 2017
  * Description: Calculator Demo Project
- * Version: 1.3 - Implemented multiply and devide
+ * Version: 1.3 - Implemented negate method
  */
 
 namespace COMP123_S2017_Lesson12B2
@@ -186,6 +186,7 @@ namespace COMP123_S2017_Lesson12B2
                     this._backSpace();
                     break;
                 case "±":
+                    this._negate(operand);
                     break;
                 default:
                     this._calculate(operand, operatorButton.Text);
@@ -193,6 +194,18 @@ namespace COMP123_S2017_Lesson12B2
             }
 
 
+        }
+
+        /// <summary>
+        /// This method is used to switch positive to negative or the other way around
+        /// </summary>
+        /// <param name="operand"></param>
+        private void _negate(double operand)
+        {
+            operand = -1 * operand;
+            this.Result = operand;
+            this.OperandList.Add(this.Result);
+            ResultTextBox.Text = this.Result.ToString();
         }
 
         /// <summary>
