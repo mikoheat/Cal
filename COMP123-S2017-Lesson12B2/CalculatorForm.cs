@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Name: Taeho Kim
  * Date: August 10, 2017
  * Description: Calculator Demo Project
- * Version: 1.3 - Implemented negate method
+ * Version: 1.4 - Fixed negate method
  */
 
 namespace COMP123_S2017_Lesson12B2
@@ -204,7 +204,6 @@ namespace COMP123_S2017_Lesson12B2
         {
             operand = -1 * operand;
             this.Result = operand;
-            this.OperandList.Add(this.Result);
             ResultTextBox.Text = this.Result.ToString();
         }
 
@@ -213,6 +212,7 @@ namespace COMP123_S2017_Lesson12B2
         /// </summary>
         private void _backSpace()
         {
+
             int i = ResultTextBox.Text.Length;
 
             ResultTextBox.Text = ResultTextBox.Text.Substring(0, i - 1);
