@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Name: Taeho Kim
  * Date: August 10, 2017
  * Description: Calculator Demo Project
- * Version: 1.1 - Added the _showResult method
+ * Version: 1.2 - Added the _backSpace method
  */
 
 namespace COMP123_S2017_Lesson12B2
@@ -183,6 +183,7 @@ namespace COMP123_S2017_Lesson12B2
                     this._showResult(operand);
                     break;
                 case "DEL":
+                    this._backSpace();
                     break;
                 case "±":
                     break;
@@ -191,6 +192,17 @@ namespace COMP123_S2017_Lesson12B2
                     break;
             }
 
+
+        }
+
+        /// <summary>
+        /// This method works to erase numbers wrongly written
+        /// </summary>
+        private void _backSpace()
+        {
+            int i = ResultTextBox.Text.Length;
+
+            ResultTextBox.Text = ResultTextBox.Text.Substring(0, i - 1);
 
         }
 
